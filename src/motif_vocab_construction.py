@@ -63,8 +63,8 @@ def motif_vocab_construction(
     index_dict = dict(zip(full_list, range(len(full_list))))
     sorted_vocab = sorted(new_vocab, key=lambda x: index_dict[x[0]])
     with open(vocab_path, "w") as f:
-        for (x, y, _) in sorted_vocab:
-            f.write(f"{x} {y}\n")
+        for (x, y, value) in sorted_vocab:
+            f.write(f"{x} {y} {value}\n")
     
     print(f"\r[{datetime.now()}] Motif vocabulary construction finished.")
     print(f"The motif vocabulary is in {vocab_path}.\n\n")
